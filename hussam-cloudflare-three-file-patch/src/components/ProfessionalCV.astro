@@ -1,0 +1,33 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import MobileContactBar from './MobileContactBar.astro';
+import {cvCopy,cvWhatsApp,jobs,certifications} from '../content/cv';
+import {site,telHref} from '../config/site';
+import {contactTrackingAttributes} from '../lib/tracking';
+import type {Locale} from '../lib/i18n';
+const {locale}=Astro.props as {locale:Locale};
+const t=cvCopy[locale];
+---
+<Header locale={locale} page="cv" />
+<main id="main" class="cv-page">
+ <nav class="cv-breadcrumb shell no-print" aria-label="Breadcrumb"><a href={`/${locale}/`}>{t.home}</a><span aria-hidden="true">/</span><a href={`/${locale}/about/`}>{t.about}</a><span aria-hidden="true">/</span><span aria-current="page">{t.cv}</span></nav>
+ <header class="cv-hero shell">
+  <div class="cv-intro"><p class="cv-eyebrow">{t.eye}</p><h1>{site.names[locale]}</h1><p class="cv-subtitle">{t.headline}</p><p class="cv-location">{t.location}</p><p class="cv-summary">{t.summary}</p>
+   <div class="cv-actions no-print"><a class="button button-lime" href={cvWhatsApp(locale)} target="_blank" rel="noopener noreferrer" data-inquiry-type="career" {...contactTrackingAttributes('whatsapp','hero')}>{t.contact} ↗</a><a href={site.linkedIn} target="_blank" rel="noopener noreferrer" class="cv-secondary">{t.linkedin} ↗</a><button class="cv-print" type="button" data-cv-print>{t.print} <span aria-hidden="true">⎙</span></button></div>
+   <p class="cv-print-contact"><span dir="ltr">{site.phoneE164}</span> · {site.linkedIn.replace('https://','')}</p>
+  </div>
+  <figure class="cv-photo"><img src="/images/hussam-office-doorway.webp" width="900" height="1350" loading="eager" fetchpriority="high" alt={t.imageAlt}/></figure>
+ </header>
+ <div class="cv-body shell">
+  <section class="cv-section" aria-labelledby="cv-career"><div class="cv-section-index">01 / {t.career}</div><div><h2 id="cv-career">{t.career}</h2><ol class="cv-timeline">{jobs.map((job,i)=><li><div class="cv-entry-head"><div><h3>{job.role}</h3><p class="cv-company" dir="ltr">{job.company}</p></div><span class="cv-period">{locale==='ar'?job.arPeriod:locale==='pt'?job.ptPeriod:job.period}</span></div><ul>{(t.jobs[i] ?? []).map(item=><li>{item}</li>)}</ul></li>)}</ol></div></section>
+  <section class="cv-section" aria-labelledby="cv-initiatives"><div class="cv-section-index">02 / {t.initiatives}</div><div><h2 id="cv-initiatives">{t.initiatives}</h2><div class="cv-initiatives">{t.initiativesData.map(([head,body],i)=><article><span class="cv-small-index">0{i+1}</span><div><h3>{head}</h3><p>{body}</p></div></article>)}</div></div></section>
+  <section class="cv-section" aria-labelledby="cv-capabilities"><div class="cv-section-index">03 / {t.capabilities}</div><div><h2 id="cv-capabilities">{t.capabilities}</h2><div class="cv-capabilities"><div><h3>{t.primary}</h3><ul>{t.primaryList.map(item=><li>{item}</li>)}</ul></div><div><h3>{t.support}</h3><ul>{t.supportList.map(item=><li>{item}</li>)}</ul></div></div></div></section>
+  <section class="cv-section" aria-labelledby="cv-education"><div class="cv-section-index">04 / {t.education}</div><div><h2 id="cv-education">{t.education}</h2><h3>{t.degree}</h3><p>{t.university} · {t.degreePeriod}</p><h3 class="cv-subheading">{t.credentials}</h3><ul class="cv-list">{certifications.map(item=><li>{item}</li>)}</ul><p class="cv-note">{t.credentialNote}</p><h3 class="cv-subheading">{t.languages}</h3><ul class="cv-list"><li>{t.arabic}</li><li>{t.english}</li></ul></div></section>
+  <section class="cv-section no-print" aria-labelledby="cv-work"><div class="cv-section-index">05 / {t.work}</div><div><h2 id="cv-work">{t.work}</h2><div class="cv-work-links"><a href={`/${locale}/work/mandi-al-deera/`}>{t.mandi} ↗</a><a href={`/${locale}/work/geberit-campaign/`}>{t.geberit} ↗</a><a href={`/${locale}/work/`}>{t.allWork} ↗</a></div></div></section>
+ </div>
+ <section class="cv-contact no-print"><div class="shell"><h2>{t.close}</h2><p>{t.closeText}</p><div class="cv-actions"><a class="button button-lime" href={cvWhatsApp(locale)} target="_blank" rel="noopener noreferrer" data-inquiry-type="career" {...contactTrackingAttributes('whatsapp','section')}>{t.contact} ↗</a><a class="cv-secondary" href={`/${locale}/work-with-me/`}>{t.services} ↗</a><a href={telHref} dir="ltr" {...contactTrackingAttributes('phone','section')}>{site.phoneE164}</a></div></div></section>
+</main>
+<Footer locale={locale} page="cv" />
+<MobileContactBar locale={locale} page="cv" />
+<script>document.querySelector('[data-cv-print]')?.addEventListener('click',()=>window.print());</script>
