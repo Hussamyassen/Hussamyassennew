@@ -1,0 +1,110 @@
+[
+  {
+    "id": "whatsapp-enquiries-sales-ar",
+    "locale": "ar",
+    "slug": "rasail-whatsapp-bila-mabieat",
+    "translationGroupId": "whatsapp-enquiries-sales",
+    "title": "إعلاناتك تجلب رسائل واتساب، لكن المبيعات ضعيفة: ماذا تراجع؟",
+    "description": "كيف تفحص الفرق بين النقرات ومحادثات واتساب والاستفسارات المؤهلة والمبيعات، وتعرف أين تتعطل رحلة العميل قبل تغيير حملتك.",
+    "series": "after-the-click",
+    "topics": [
+      "whatsapp",
+      "paid-advertising",
+      "sales-conversion",
+      "measurement"
+    ],
+    "authorId": "hussam-yassen",
+    "status": "published",
+    "body": "## ابدأ بتحديد ما تقيسه\n\nقد ترى في التقرير عدداً كبيراً من النقرات، لكن ليس كل نقرة استفساراً. فرّق بين خمس مراحل: **النقر على الإعلان**، ثم **الضغط على رابط واتساب** من موقعك، ثم **المحادثة التي بدأت فعلياً**، ثم **استفسار مؤهل** له حاجة حقيقية ضمن نطاق خدمتك، وأخيراً **مبيعة مكتملة**.\n\nإذا سجّلت GA4 حدثاً عند الضغط على رابط واتساب، فهذا يثبت تفاعل الضغط وفق إعداد القياس، وليس إرسال رسالة أو إتمام شراء. وتختلف أيضاً تعريفات مؤشرات منصات الإعلانات؛ راجع اسم المؤشر وتعريفه في التقرير الفعلي قبل جمعه مع بيانات أخرى.\n\nالطريقة الأبسط: ارسم هذه المراحل على ورقة، واكتب تحت كل مرحلة ما تملكه من دليل فعلي، وما لا تستطيع قياسه بعد. لا تعوّض الخانات المجهولة بتخمين.\n\n## راجع الوعد في الإعلان\n\nاسأل: هل يعرف المشاهد بالضبط ما الذي تعرضه؟ الإعلان الذي يثير الفضول قد يحصل على نقرات، لكنه قد يجعل العميل يرسل رسالة فقط ليسأل عن نوع المنتج أو السعر أو ما إذا كانت الخدمة تصل إلى منطقته.\n\nراجع الوصف والصورة أو الفيديو وشروط العرض. هل يوجد اختلاف بين الوعد الإعلاني والسعر النهائي أو المخزون أو المدينة أو نوع الخدمة؟ لا يعني ذلك أن تعرض كل التفاصيل الصغيرة داخل الإعلان؛ إعطاء معلومات أكثر قد يخفض الاستفسارات الأولية، لكنه قد يساعد على تحسين وضوحها.\n\nقارن الأسئلة المتكررة في المحادثات بنص الإعلان: إن كان غالبها عن معلومات أساسية غير مذكورة، فهذه إشارة تستحق اختبار رسالة أوضح، لا دليلاً قاطعاً على أن الإعلان وحده هو السبب.\n\n## افحص المحادثة نفسها\n\nانتقل من عدّ الرسائل إلى قراءة كيفية التعامل معها. هل يفهم الرد الأول سؤال العميل أم يرسل قائمة عامة لا تجيب عنه؟ هل يوضح السعر أو خيارات المنتج، والتوافر، والتوصيل، والخطوة التالية؟\n\nافترض أن شخصاً يسأل عن موعد خدمة، فيُجاب برسالة ترحيب طويلة دون مواعيد أو طريقة حجز. قد يكون الإشكال هنا في مسار المحادثة لا في الإعلان. مثال آخر: يطلب العميل سعر منتج، ثم يظل غير عارف إن كان التوصيل متاحاً. هذه أمثلة افتراضية للتشخيص وليست نتائج حملات فعلية.\n\nراجع عينة مناسبة من المحادثات بصورة تحترم الخصوصية، وحدد الأسئلة التي تتكرر دون إجابة واضحة. متابعة العميل يمكن أن تكون مفيدة عندما تكون مرتبطة باستفساره وتوقعاته؛ لا تجعلها رسائل جماعية غير مرغوب فيها.\n\n## ابحث عن عوائق الشراء\n\nقد يبدو الاستفسار جيداً حتى يصل العميل إلى خطوة الشراء. هنا تظهر عوائق مثل عدم وضوح موقع المتجر، ورسوم توصيل مفاجئة، ونقص معلومات المخزون، أو خطوات حجز ودفع معقدة.\n\nتخيّل إعلاناً يعرض منتجاً بسعر واضح، ثم يكتشف المشتري عند التواصل أن المنتج غير متوافر في فرعه أو أن التوصيل يكلف مبلغاً إضافياً لم يُذكر. هذه فجوة بين الوعد وتجربة الشراء، ولا يجوز اعتبارها حالة حقيقية من أعمال حسام.\n\nجرّب المسار كما يراه العميل: من الإعلان إلى صفحة الوصول أو واتساب، مروراً بالإجابة وحتى تأكيد الطلب. سجل نقاط التوقف بدلاً من الاكتفاء بانطباع عام عن «جودة العملاء».\n\n## تتبع الاستفسارات المؤهلة والمبيعات\n\nيمكنك إعداد سجل داخلي بسيط يضم تاريخ الاستفسار، ومصدره أو حملته **عندما تعرفه بثقة**، وحالته، وهل يحقق معايير تأهيل محددة سلفاً، وهل انتهى ببيع وقيمته المسجلة، وسبب عدم الشراء إن كان معروفاً.\n\nحدد معايير التأهيل قبل التحليل: مثلاً داخل نطاق التوصيل، يبحث عن المنتج المعروض، ولديه حاجة حقيقية. لا تجمع بيانات شخصية أكثر مما تحتاج، وراعِ صلاحيات الوصول وفترة الاحتفاظ بالسجل.\n\nهذا السجل يساعد على المقارنة، لكنه لا يضمن معرفة مصدر كل عملية بيع. كما أن الإيراد الذي تنسبه منصة إلى إعلان لا يعني بالضرورة أنه إيراد إضافي ما كان ليحدث دون الإعلان؛ إثبات الأثر الإضافي يحتاج تحليلاً مختلفاً.\n\n## مثال حسابي توضيحي\n\n**مثال افتراضي للتوضيح فقط — ليس نتيجة لحملة لحسام أو معياراً للسوق.** افترض أن لديك 100 استفسار حقيقي، منها 30 استفساراً مؤهلاً، وانتهت 6 استفسارات بمبيعات مكتملة.\n\nمعدل التحويل من الاستفسار إلى البيع = 6 ÷ 100 = **6%**. ومعدل التحويل من الاستفسار المؤهل إلى البيع = 6 ÷ 30 = **20%**. هذان الرقمان يجيبان عن سؤالين مختلفين، ولا يمكن منهما وحدهما الحكم على الربحية دون معرفة التكاليف وهوامش الربح.\n\n## جدول تشخيص سريع\n\nاقرأ الصفوف التالية كفرضيات أولية، لا كأسباب مثبتة. لا تبدأ بتغيير الميزانية لمجرد أن الرسائل كثيرة، بل حدد أين يحتاج العمل إلى فحص.\n\n| ما تلاحظه | تفسير محتمل | ماذا تراجع؟ |\n\n| --- | --- | --- |\n\n| رسائل كثيرة ولا أحد يناسب الخدمة | العرض أو الجمهور غير واضح | قارن أسئلة العملاء بنص الإعلان ونطاق الخدمة |\n\n| يسأل العميل عن السعر ثم يتوقف | السعر أو الشروط غير واضحة | راجع الرد الأول والسعر النهائي والرسوم |\n\n| استفسارات جادة ولا حجوزات | خطوة الحجز معقدة أو التوافر غير واضح | جرّب مسار الحجز حتى التأكيد |\n\n| النقرات أكثر بكثير من الرسائل | الضغط ليس محادثة فعلية بالضرورة | راجع أحداث الموقع وعدد المحادثات التي بدأت |\n\n| مبيعات موجودة ولا تعرف مصدرها | بيانات المصدر غير مكتملة | راجع طريقة التسجيل ومعايير نسبة المبيعات |\n\n## ما الذي تغيّره أولاً؟\n\nأولاً تحقق من تعريف المقاييس واتساقها: هل تقارن رسائل حقيقية بنقرات فقط؟ بعد ذلك حدد نقطة احتكاك متكررة ومدعومة بملاحظات، مثل سؤال السعر الذي لا يجد إجابة أو صعوبة تأكيد الطلب.\n\nاختر تغييراً محدداً يمكن فهم أثره: توضيح شرط عرض في الإعلان، أو اختصار خطوة الحجز، أو جعل الرد الأول يجيب عن السؤال الشائع. ثم راقب مؤشراً تجارياً مناسباً مثل نسبة الاستفسارات المؤهلة أو المبيعات المكتملة، وليس عدد الرسائل وحده.\n\nلا توجد مدة اختبار واحدة تناسب الجميع، ولا فائدة من تغيير الإعلان وصفحة الهبوط والمحادثة دفعة واحدة إذا كنت تريد فهم ما أحدث الفرق. إذا كان حجم البيانات محدوداً، صرّح بعدم كفايتها بدلاً من إعلان فوز مبكر.",
+    "references": [
+      {
+        "title": "Google Analytics — Measure outbound clicks",
+        "url": "https://support.google.com/analytics/answer/13566436?hl=en"
+      },
+      {
+        "title": "Google Analytics — Enhanced measurement events",
+        "url": "https://support.google.com/analytics/answer/9216061?hl=en"
+      },
+      {
+        "title": "Google Ads / Analytics — Clicks versus sessions",
+        "url": "https://support.google.com/analytics/answer/14452452?hl=en"
+      },
+      {
+        "title": "WhatsApp Help Center — About WhatsApp Business",
+        "url": "https://faq.whatsapp.com/641572844337957"
+      }
+    ]
+  },
+  {
+    "id": "whatsapp-enquiries-sales-en",
+    "locale": "en",
+    "slug": "whatsapp-enquiries-few-sales",
+    "translationGroupId": "whatsapp-enquiries-sales",
+    "title": "WhatsApp Enquiries but Few Sales: What to Check in Your Ad Campaign",
+    "description": "A practical guide to distinguishing ad clicks, WhatsApp chats, qualified enquiries and sales — and spotting the friction between them.",
+    "series": "after-the-click",
+    "topics": [
+      "whatsapp",
+      "paid-advertising",
+      "sales-conversion",
+      "measurement"
+    ],
+    "authorId": "hussam-yassen",
+    "status": "published",
+    "body": "## Know what you are counting\n\nStart by separating five events: an **advert click**; a **click on a WhatsApp link** on your website; a **conversation actually started**; a **qualified enquiry** that meets your agreed criteria; and a **completed sale**. They represent different stages of the customer journey.\n\nA Google Analytics outbound-link click can record a visitor pressing a WhatsApp link. It does not prove that they sent a message or purchased anything. Messaging metrics inside advertising platforms can also have specific definitions; use the definition shown for the particular metric rather than treating every reported click or conversation as interchangeable.\n\nMake a simple funnel on paper. For each stage, mark what you can substantiate and what remains unknown. Do not fill missing data with assumptions.\n\n## Check the promise in the advert\n\nAsk whether the advert explains the product or service, the price or important offer conditions, and the location or service area. Creative that raises curiosity can attract enquiries from people who are not looking for the actual offer.\n\nMore detail upfront may reduce basic questions while making the remaining enquiries clearer. Less detail can encourage questions but also create unnecessary friction. Neither is a universal rule.\n\nCompare repeated customer questions with the advert itself. If most people ask about an essential condition that was absent, testing clearer copy may be worthwhile. That pattern alone does not prove that the advert is the sole problem.\n\n## Review the conversation\n\nRead conversations rather than merely counting them. Does the first reply answer what the customer asked? Does it clarify availability, pricing, delivery, appointment options and the next action?\n\nImagine someone asks for an appointment and receives a lengthy greeting without available times or booking instructions. Or a customer asks about a product and cannot establish whether it is delivered to their area. These are hypothetical illustrations, not accounts of Hussam’s client work.\n\nReview an appropriate sample while respecting privacy. Identify recurring unanswered questions. A relevant follow-up may help an interested customer, but do not confuse helpful follow-up with unsolicited bulk messages.\n\n## Find the purchasing friction\n\nAn enquiry can be genuinely interested and still run into an obstacle at purchase. Common possibilities include unclear shop directions, delivery costs appearing late, out-of-stock items, or a complicated booking or payment process.\n\nFor example, imagine an advert that displays a price but the customer only learns at checkout about a substantial delivery fee. Another customer may discover the item is unavailable in their area. These are hypothetical possibilities, not measured campaign findings.\n\nWalk through the journey yourself, from advert to landing page or WhatsApp to order confirmation. Note each point where a customer cannot see the next step.\n\n## Measure qualified enquiries and sales\n\nA modest internal log can capture the date, campaign or source **when reliably known**, enquiry status, whether predetermined qualification criteria were met, sale status and recorded value, and the reason for non-purchase where genuinely known.\n\nAgree on qualification criteria before analysing outcomes: for instance, being inside the delivery area, enquiring about an available product and having a genuine requirement. Avoid collecting unnecessary personal data, and control access and retention appropriately.\n\nA spreadsheet can expose patterns, but cannot solve attribution by itself. Revenue attributed to an advert is not automatically incremental revenue caused by that advert. Establishing incrementality requires a different evaluation.\n\n## An illustrative calculation\n\n**Illustrative figures only — not results from Hussam’s campaigns or an industry benchmark.** Suppose you receive 100 genuine enquiries; 30 are qualified and six result in completed sales.\n\nEnquiry-to-sale rate = 6 ÷ 100 = **6%**. Qualified-enquiry-to-sale rate = 6 ÷ 30 = **20%**. These ratios answer different questions. Neither establishes profitability without costs and margins.\n\n## A practical diagnostic table\n\nTreat the following explanations as hypotheses to investigate, not diagnoses proven by the numbers.\n\n| What you observe | Possible explanation | What to check next |\n\n| --- | --- | --- |\n\n| Many messages, little genuine fit | The advert or audience may not match the offer | Compare common questions with the advert and service area |\n\n| Customers stop after asking for a price | Price or conditions may be unclear | Check the first reply, final price and fees |\n\n| Interested enquiries but few bookings | Availability or booking process may be difficult | Walk through the booking process to confirmation |\n\n| Far more clicks than chats | A click is not the same as a started conversation | Compare outbound events with actual conversations |\n\n| Sales recorded without reliable sources | Source capture may be incomplete | Review source logging and attribution limitations |\n\n## What should you change first?\n\nFirst validate measurement. Are you comparing actual chats with website clicks? Then identify one recurring point of friction backed by evidence, such as an unanswered pricing question or a difficult booking step.\n\nMake a focused change: clarify an offer condition, simplify the booking action or revise the initial response. Evaluate an outcome that matters to the business, such as qualified enquiries or recorded sales, rather than relying on message volume alone.\n\nThere is no single test duration that suits every business. Changing the advert, landing page and sales response simultaneously also makes it harder to know what contributed to an improvement. If the sample is small, acknowledge the uncertainty.",
+    "references": [
+      {
+        "title": "Google Analytics — Measure outbound clicks",
+        "url": "https://support.google.com/analytics/answer/13566436?hl=en"
+      },
+      {
+        "title": "Google Analytics — Enhanced measurement events",
+        "url": "https://support.google.com/analytics/answer/9216061?hl=en"
+      },
+      {
+        "title": "Google Ads / Analytics — Clicks versus sessions",
+        "url": "https://support.google.com/analytics/answer/14452452?hl=en"
+      },
+      {
+        "title": "WhatsApp Help Center — About WhatsApp Business",
+        "url": "https://faq.whatsapp.com/641572844337957"
+      }
+    ]
+  },
+  {
+    "id": "whatsapp-enquiries-sales-pt",
+    "locale": "pt",
+    "slug": "contactos-whatsapp-poucas-vendas",
+    "translationGroupId": "whatsapp-enquiries-sales",
+    "title": "Recebe contactos pelo WhatsApp, mas poucas vendas? O que analisar na campanha",
+    "description": "Como distinguir cliques, conversas, contactos qualificados e vendas e encontrar os obstáculos no percurso do cliente.",
+    "series": "after-the-click",
+    "topics": [
+      "whatsapp",
+      "paid-advertising",
+      "sales-conversion",
+      "measurement"
+    ],
+    "authorId": "hussam-yassen",
+    "status": "published",
+    "body": "## Comece por definir o que está a contar\n\nDistinga cinco momentos: **clique no anúncio**, **clique no link do WhatsApp** no site, **conversa efetivamente iniciada**, **contacto qualificado** segundo critérios previamente definidos e **venda concluída**. São medidas diferentes.\n\nUm evento de clique de saída no Google Analytics pode registar a abertura de um link para o WhatsApp, mas não demonstra que a mensagem foi enviada nem que houve compra. Indicadores de conversas nas plataformas de publicidade também devem ser interpretados de acordo com as suas definições específicas.\n\nDesenhe o percurso e indique que provas existem para cada etapa. Quando não houver dados, assinale essa limitação em vez de preencher números por estimativa.\n\n## Verifique a promessa do anúncio\n\nO anúncio explica claramente o produto, o serviço, o preço e as condições importantes? O público sabe em que área é prestado o serviço ou se há entrega na sua zona? Uma peça criativa curiosa pode gerar interesse que não corresponde à oferta real.\n\nRevelar mais detalhes antes do contacto pode reduzir perguntas iniciais e tornar as conversas mais esclarecidas. Esconder detalhes pode gerar mais perguntas, mas também dúvidas. Não há uma regra universal.\n\nCompare as perguntas repetidas com a mensagem do anúncio. Se uma condição essencial não foi comunicada, vale a pena testar uma formulação mais clara; isso não demonstra, por si só, que toda a dificuldade começa na publicidade.\n\n## Analise a conversa\n\nObserve o que acontece depois da primeira mensagem. A resposta esclarece a pergunta do potencial cliente? Explica disponibilidade, preço, entregas, marcação e próximos passos?\n\nImagine uma pessoa que pergunta por uma marcação e recebe apenas uma saudação longa, sem horários disponíveis. Ou alguém que pergunta por um produto e não consegue saber se existe entrega na sua área. São exemplos hipotéticos, não casos reais de clientes de Hussam.\n\nAnalise conversas relevantes com respeito pela privacidade. Identifique dúvidas sem resposta e acompanhe apenas contactos dentro das expectativas da pessoa, sem recorrer a mensagens em massa não solicitadas.\n\n## Identifique obstáculos à compra\n\nMesmo um contacto interessado pode desistir perante uma localização pouco clara, custos de entrega inesperados, falta de stock ou um pagamento e uma marcação complicados.\n\nImagine um anúncio com preço visível em que o cliente descobre uma taxa adicional apenas no final. Noutra situação hipotética, o artigo está indisponível na zona de entrega. Estes exemplos servem para pensar o diagnóstico, não para relatar uma campanha.\n\nPercorra a experiência desde o anúncio até à confirmação da encomenda ou marcação. Registe as etapas onde a próxima ação deixa de ser evidente.\n\n## Meça contactos qualificados e vendas\n\nUm registo interno simples pode conter data, campanha ou origem **quando conhecida com confiança**, estado do contacto, cumprimento dos critérios de qualificação, estado e valor da venda quando registados e motivo de não compra quando conhecido.\n\nDefina antes os critérios de qualificação, por exemplo: cliente dentro da área de serviço, produto disponível e necessidade real. Evite recolher dados pessoais desnecessários e limite adequadamente o acesso e a conservação.\n\nUma folha de cálculo ajuda a identificar padrões, mas não resolve perfeitamente a atribuição. Receita atribuída a um anúncio não equivale automaticamente a receita adicional causada pela publicidade.\n\n## Exemplo numérico ilustrativo\n\n**Exemplo meramente ilustrativo — não são resultados de campanhas de Hussam nem referências de mercado.** Considere 100 contactos genuínos, 30 qualificados e seis vendas concluídas.\n\nTaxa de contacto para venda = 6 ÷ 100 = **6%**. Taxa de contacto qualificado para venda = 6 ÷ 30 = **20%**. São indicadores diferentes e não permitem calcular rentabilidade sem custos e margens.\n\n## Tabela prática de diagnóstico\n\nA tabela apresenta hipóteses a verificar e não causas comprovadas.\n\n| O que observa | Possível explicação | O que verificar |\n\n| --- | --- | --- |\n\n| Muitos contactos pouco adequados | Oferta ou público pouco alinhado | Confronte perguntas recebidas com o anúncio e a área de serviço |\n\n| Perguntam preço e deixam de responder | Condições ou valor final pouco claros | Verifique primeira resposta, preço e taxas |\n\n| Interesse sem marcações | Processo de reserva ou disponibilidade pouco claros | Experimente o percurso até à confirmação |\n\n| Mais cliques do que conversas | Um clique não prova uma conversa iniciada | Compare eventos do site com conversas reais |\n\n| Vendas sem origem confirmada | Registo de origem incompleto | Reveja registo e limites da atribuição |\n\n## O que mudar primeiro?\n\nPrimeiro confirme o significado dos indicadores. Está a comparar cliques no site com conversas efetivamente iniciadas? Depois procure um obstáculo recorrente documentado, como dúvidas sobre o preço ou uma marcação complicada.\n\nEscolha uma alteração específica: esclarecer uma condição no anúncio, simplificar a reserva ou melhorar a primeira resposta. Avalie contactos qualificados e vendas registadas, em vez de apenas contar mensagens.\n\nNão existe um período de teste universal. Alterar anúncio, página e resposta comercial de uma só vez dificulta perceber o que contribuiu para o resultado. Com poucos dados, mantenha a conclusão prudente.",
+    "references": [
+      {
+        "title": "Google Analytics — Measure outbound clicks",
+        "url": "https://support.google.com/analytics/answer/13566436?hl=en"
+      },
+      {
+        "title": "Google Analytics — Enhanced measurement events",
+        "url": "https://support.google.com/analytics/answer/9216061?hl=en"
+      },
+      {
+        "title": "Google Ads / Analytics — Clicks versus sessions",
+        "url": "https://support.google.com/analytics/answer/14452452?hl=en"
+      },
+      {
+        "title": "WhatsApp Help Center — About WhatsApp Business",
+        "url": "https://faq.whatsapp.com/641572844337957"
+      }
+    ]
+  }
+]

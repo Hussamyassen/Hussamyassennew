@@ -1,0 +1,45 @@
+---
+import '../styles/tokens.css';
+import '../styles/home.css';
+import '../styles/results.css';
+import '../styles/mandi-detail.css';
+import '../styles/geberit-detail.css';
+import '../styles/about.css';
+import '../styles/cv.css';
+import '../styles/insights.css';
+import '../styles/article.css';
+import { direction, messages, type Locale } from '../lib/i18n';
+import { seoFor, type SeoInput } from '../lib/seo';
+import { site } from '../config/site';
+interface Props extends SeoInput {}
+const props = Astro.props as Props;
+const seo = seoFor(props);
+---
+<!doctype html>
+<html lang={props.locale} dir={direction(props.locale)}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F7F7F2" />
+    <meta name="robots" content={seo.robots} />
+    <title>{props.title}</title>
+    <meta name="description" content={props.description} />
+    <link rel="canonical" href={seo.canonical} />
+    {seo.alternates.map(item => <link rel="alternate" hreflang={item.lang} href={item.href} />)}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={props.title} />
+    <meta property="og:description" content={props.description} />
+    <meta property="og:url" content={seo.canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:locale" content={props.locale} />
+    <slot name="structured-data" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{messages[props.locale].skip}</a>
+    <slot />
+  </body>
+</html>
+<style>
+  .skip-link { position: absolute; inset-inline-start: 1rem; top: -6rem; padding: .75rem 1rem; background: var(--color-lime); color: var(--color-ink); z-index: 100; }
+  .skip-link:focus { top: 1rem; }
+</style>

@@ -1,0 +1,28 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import MobileContactBar from './MobileContactBar.astro';
+import {workIndexCopy,workIndexWhatsApp} from '../content/workIndex';import {mandiDetail} from '../content/mandiDetail';
+import {getProjects,projectWhatsApp} from '../content/projects';
+import {contactTrackingAttributes} from '../lib/tracking';
+import {telHref} from '../config/site';
+import type {Locale} from '../lib/i18n';
+const {locale}=Astro.props as {locale:Locale};
+const t=workIndexCopy[locale];const projects=getProjects(locale);
+---
+<Header locale={locale} page="work-index" />
+<main id="main" class="results-index">
+  <section class="results-hero shell" aria-labelledby="results-heading"><p class="eyebrow">{t.eyebrow}</p><h1 id="results-heading">{t.hero}</h1><p class="results-intro">{t.intro}</p><div class="results-actions"><a class="button button-lime" href={workIndexWhatsApp(locale)} target="_blank" rel="noopener noreferrer" data-inquiry-type="general" {...contactTrackingAttributes('whatsapp','hero')}>{t.primary} <span aria-hidden="true">↗</span></a><a class="text-link" href="#projects">{t.secondary} ↓</a></div></section>
+  <section id="projects" class="results-projects shell" aria-label={t.secondary}>
+    {projects.map((project,i)=><article class:list={['results-project',i===1&&'results-project-second']} aria-labelledby={`result-${project.id}`}>
+      <div class="results-project-identity"><span class="results-project-number">0{i+1} / 02</span><p class="results-context">{project.context}</p><h2 id={`result-${project.id}`}>{project.title}</h2><p class="results-disciplines">{project.disciplines.join(' · ')}</p><p class="results-summary">{project.summary}</p><h3>{t.roleHeading}</h3><p>{project.role}</p><a class="results-project-link" href={projectWhatsApp(locale,project)} target="_blank" rel="noopener noreferrer" data-inquiry-type={project.id} {...contactTrackingAttributes('whatsapp','section')}>{project.cta}<span aria-hidden="true">↗</span></a>
+      {project.caseStudyRoute && <a class="results-project-link" href={project.caseStudyRoute}>{mandiDetail[locale].detailsLink} ↗</a>}
+      </div>
+      <div class="results-evidence"><div class="evidence-topline"><span>{project.id==='mandi'?'Google Ads':'Instagram Ads'}</span><span>{project.metric.unit==='CTR'?'CTR':'SALES'}</span></div><strong class="results-value" dir="ltr">{project.metric.value}</strong><p class="results-value-label">{project.metric.label}</p><p class="results-note">{project.metric.note}</p>{project.authenticAsset && <a href={project.authenticAsset.original} target="_blank" rel="noopener noreferrer"><img src={project.authenticAsset.src} alt={project.authenticAsset.alt} loading="lazy" /></a>}</div>
+    </article>)}
+  </section>
+  <section class="results-similar shell" aria-labelledby="results-similar-title"><div><h2 id="results-similar-title">{t.similarTitle}</h2><p>{t.similarBody}</p></div><div class="results-similar-actions"><a class="button button-lime" href={workIndexWhatsApp(locale)} target="_blank" rel="noopener noreferrer" data-inquiry-type="general" {...contactTrackingAttributes('whatsapp','section')}>{t.similarCta} ↗</a><a class="text-link" href={`/${locale}/work-with-me/`}>{t.servicesLink} ↗</a></div></section>
+  <section class="contact-section results-contact" aria-labelledby="results-contact-title"><div class="shell contact-layout"><div><h2 id="results-contact-title">{t.contactTitle}</h2><p>{t.contactBody}</p></div><div class="contact-actions"><a class="button button-lime" href={workIndexWhatsApp(locale)} target="_blank" rel="noopener noreferrer" data-inquiry-type="general" {...contactTrackingAttributes('whatsapp','section')}>{t.contactWhats} ↗</a><a class="button button-outline" href={telHref} {...contactTrackingAttributes('phone','section')}>{t.call} ↗</a></div></div></section>
+</main>
+<Footer locale={locale} page="work-index" />
+<MobileContactBar locale={locale} page="work-index" />

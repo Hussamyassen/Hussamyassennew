@@ -1,0 +1,8 @@
+---
+import { site } from '../config/site';
+import type { Locale } from '../lib/i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<span class="wordmark" aria-label={site.names[locale]}>{site.names[locale]}</span>
+<style>.wordmark { font-weight: 700; letter-spacing: -.035em; color: var(--color-ink); }</style>

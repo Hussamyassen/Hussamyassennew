@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import MandiDetail from '../../../../components/MandiDetail.astro';
+import {locales,type Locale} from '../../../../lib/i18n';
+import {mandiDetail} from '../../../../content/mandiDetail';
+export function getStaticPaths(){return locales.map(locale=>({params:{locale}}));}
+const locale=Astro.params.locale as Locale;
+const t=mandiDetail[locale];
+const pathname=`/${locale}/work/mandi-al-deera/`;
+const alternates={ar:'/ar/work/mandi-al-deera/',en:'/en/work/mandi-al-deera/',pt:'/pt/work/mandi-al-deera/'};
+const origin='https://husamyasen.com';
+const graph={'@context':'https://schema.org','@graph':[
+ {'@type':'WebPage','@id':`${origin}${pathname}#webpage`,url:`${origin}${pathname}`,name:t.metaTitle,description:t.metaDescription,inLanguage:locale,author:{'@id':`${origin}/#person`},about:{'@type':'Thing',name:'Mandi Al Deera restaurant'},breadcrumb:{'@id':`${origin}${pathname}#breadcrumb`}},
+ {'@type':'BreadcrumbList','@id':`${origin}${pathname}#breadcrumb`,itemListElement:[{'@type':'ListItem',position:1,name:t.breadcrumbHome,item:`${origin}/${locale}/`},{'@type':'ListItem',position:2,name:t.breadcrumbWork,item:`${origin}/${locale}/work/`},{'@type':'ListItem',position:3,name:'Mandi Al Deera',item:`${origin}${pathname}`}]},
+ {'@type':'Person','@id':`${origin}/#person`,name:'Hussam Yassen',alternateName:'حسام ياسين',url:`${origin}/`,sameAs:['https://www.linkedin.com/in/hussam-yassen','https://www.instagram.com/growthlab.ae/']}
+]};
+---
+<BaseLayout locale={locale} pathname={pathname} title={t.metaTitle} description={t.metaDescription} alternates={alternates} indexable={true}><Fragment slot="structured-data"><script type="application/ld+json" set:html={JSON.stringify(graph)} /></Fragment><MandiDetail locale={locale}/></BaseLayout>

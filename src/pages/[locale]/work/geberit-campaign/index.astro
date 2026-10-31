@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import GeberitDetail from '../../../../components/GeberitDetail.astro';
+import {locales,type Locale} from '../../../../lib/i18n';
+import {geberitDetail} from '../../../../content/geberitDetail';
+export function getStaticPaths(){return locales.map(locale=>({params:{locale}}));}
+const locale=Astro.params.locale as Locale;
+const t=geberitDetail[locale];
+const pathname=`/${locale}/work/geberit-campaign/`;
+const alternates={ar:'/ar/work/geberit-campaign/',en:'/en/work/geberit-campaign/',pt:'/pt/work/geberit-campaign/'};
+const origin='https://husamyasen.com';
+const graph={'@context':'https://schema.org','@graph':[
+ {'@type':'WebPage','@id':`${origin}${pathname}#webpage`,url:`${origin}${pathname}`,name:t.metaTitle,description:t.metaDescription,inLanguage:locale,author:{'@id':`${origin}/#person`},breadcrumb:{'@id':`${origin}${pathname}#breadcrumb`}},
+ {'@type':'BreadcrumbList','@id':`${origin}${pathname}#breadcrumb`,itemListElement:[{'@type':'ListItem',position:1,name:t.crumbHome,item:`${origin}/${locale}/`},{'@type':'ListItem',position:2,name:t.crumbWork,item:`${origin}/${locale}/work/`},{'@type':'ListItem',position:3,name:t.crumbCurrent,item:`${origin}${pathname}`}]},
+ {'@type':'Person','@id':`${origin}/#person`,name:'Hussam Yassen',alternateName:'حسام ياسين',url:`${origin}/`,sameAs:['https://www.linkedin.com/in/hussam-yassen','https://www.instagram.com/growthlab.ae/']}
+]};
+---
+<BaseLayout locale={locale} pathname={pathname} title={t.metaTitle} description={t.metaDescription} alternates={alternates} indexable={true}><Fragment slot="structured-data"><script type="application/ld+json" set:html={JSON.stringify(graph)} /></Fragment><GeberitDetail locale={locale}/></BaseLayout>

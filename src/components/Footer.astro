@@ -1,0 +1,15 @@
+---
+import {insightsCopy, insightsWhatsApp} from '../content/insights';
+import {aboutCopy,aboutWhatsApp} from '../content/about';
+import {cvCopy} from '../content/cv';
+import Wordmark from './Wordmark.astro';
+import LanguageLinks from './LanguageLinks.astro';
+import { site,telHref } from '../config/site';
+import type { Locale } from '../lib/i18n';
+import { getHome } from '../content/home';
+import { getWork } from '../content/work';
+import {workIndexCopy} from '../content/workIndex';
+import { contactTrackingAttributes } from '../lib/tracking';
+const {locale,page='home'}=Astro.props as {locale:Locale;page?:'home'|'work'|'work-index'|'mandi-detail'|'geberit-detail'|'about'|'cv'|'insights'};const t=getHome(locale);const w=getWork(locale);const wi=workIndexCopy[locale];const about=aboutCopy[locale];const equivalents=page==='work'?{ar:'/ar/work-with-me/',en:'/en/work-with-me/',pt:'/pt/work-with-me/'}:page==='work-index'?{ar:'/ar/work/',en:'/en/work/',pt:'/pt/work/'}:page==='mandi-detail'?{ar:'/ar/work/mandi-al-deera/',en:'/en/work/mandi-al-deera/',pt:'/pt/work/mandi-al-deera/'}:page==='geberit-detail'?{ar:'/ar/work/geberit-campaign/',en:'/en/work/geberit-campaign/',pt:'/pt/work/geberit-campaign/'}:page==='about'?{ar:'/ar/about/',en:'/en/about/',pt:'/pt/about/'}:page==='cv'?{ar:'/ar/cv/',en:'/en/cv/',pt:'/pt/cv/'}:page==='insights'?{ar:'/ar/insights/',en:'/en/insights/',pt:'/pt/insights/'}:{ar:'/ar/',en:'/en/',pt:'/pt/'};
+---
+<footer class="site-footer"><div class="shell footer-layout"><div><a class="footer-brand" href={`/${locale}/`}><Wordmark locale={locale}/></a><p>{t.footerLine}</p></div><div class="footer-links"><a href={`/${locale}/work-with-me/`} aria-current={page==='work'?'page':undefined}>{w.footerWork}</a><a href={`/${locale}/about/`} aria-current={page==='about'?'page':undefined}>{about.about}</a><a href={`/${locale}/insights/`} aria-current={page==='insights'?'page':undefined}>{insightsCopy[locale].nav}</a><a href={`/${locale}/cv/`} aria-current={page==='cv'?'page':undefined}>{cvCopy[locale].cv}</a><a href={`/${locale}/work/`} aria-current={page==='work-index'||page==='mandi-detail'||page==='geberit-detail'?'page':undefined}>{wi.navLabel}</a><a href={site.linkedIn} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a><a dir="ltr" href={telHref} {...contactTrackingAttributes('phone','footer')}>{site.phoneDisplay}</a></div><div class="footer-langs"><LanguageLinks current={locale} equivalents={equivalents}/></div></div><div class="shell footer-bottom"><span>© {new Date().getFullYear()} {site.names[locale]}. {t.rights}.</span><a href="#top">↑</a></div></footer>

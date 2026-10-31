@@ -1,0 +1,10 @@
+---
+import { equivalentLanguageLinks, type Locale } from '../lib/i18n';
+interface Props { current: Locale; equivalents: Partial<Record<Locale, string>> }
+const { current, equivalents } = Astro.props;
+const options = equivalentLanguageLinks(equivalents);
+---
+<nav aria-label="Language / اللغة / Idioma">
+  {options.map(option => <a href={option.href} lang={option.locale} hreflang={option.locale} aria-current={current === option.locale ? 'page' : undefined}>{option.locale.toUpperCase()}</a>)}
+</nav>
+<style> nav { display: flex; flex-wrap: wrap; gap: .75rem; } a { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; } </style>

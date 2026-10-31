@@ -1,0 +1,48 @@
+---
+import {insightsCopy, insightsWhatsApp} from '../content/insights';
+import {articles,translatedArticle} from '../content/insights/types';
+import {geberitWhatsApp,geberitDetail} from '../content/geberitDetail';
+
+import {aboutCopy,aboutWhatsApp} from '../content/about';
+import {cvCopy,cvWhatsApp} from '../content/cv';
+import Wordmark from './Wordmark.astro';
+import LanguageLinks from './LanguageLinks.astro';
+import { whatsappHref, type Locale } from '../lib/i18n';
+import { contactTrackingAttributes } from '../lib/tracking';
+import { getHome } from '../content/home';
+import { getWork } from '../content/work';
+import { workWhatsApp } from '../lib/work';
+import {workIndexCopy,workIndexWhatsApp} from '../content/workIndex';import {mandiWhatsApp} from '../content/mandiDetail';
+const { locale, page = 'home' } = Astro.props as {locale:Locale;page?:'home'|'work'|'work-index'|'mandi-detail'|'geberit-detail'|'about'|'cv'|'insights'};
+const w=getWork(locale);const wi=workIndexCopy[locale];
+const homeBase=`/${locale}/`;
+const anchorHref=(id:string)=>page==='home'?`#${id}`:`${homeBase}#${id}`;
+const about=aboutCopy[locale];const equivalents=page==='work'?{ar:'/ar/work-with-me/',en:'/en/work-with-me/',pt:'/pt/work-with-me/'}:page==='work-index'?{ar:'/ar/work/',en:'/en/work/',pt:'/pt/work/'}:page==='mandi-detail'?{ar:'/ar/work/mandi-al-deera/',en:'/en/work/mandi-al-deera/',pt:'/pt/work/mandi-al-deera/'}:page==='geberit-detail'?{ar:'/ar/work/geberit-campaign/',en:'/en/work/geberit-campaign/',pt:'/pt/work/geberit-campaign/'}:page==='about'?{ar:'/ar/about/',en:'/en/about/',pt:'/pt/about/'}:page==='cv'?{ar:'/ar/cv/',en:'/en/cv/',pt:'/pt/cv/'}:page==='insights'?{ar:'/ar/insights/',en:'/en/insights/',pt:'/pt/insights/'}:{ar:'/ar/',en:'/en/',pt:'/pt/'};
+const currentArticle=articles.find(a=>a.locale===locale&&Astro.url.pathname===`/${locale}/insights/${a.slug}/`);
+const articleEquivalents=currentArticle?Object.fromEntries((['ar','en','pt'] as Locale[]).map(l=>[l,translatedArticle(currentArticle,l)]).filter(([,a])=>Boolean(a)).map(([l,a])=>[l,`/${l}/insights/${(a as typeof currentArticle).slug}/`])):undefined;
+const effectiveEquivalents=articleEquivalents??equivalents;
+const t=getHome(locale);
+const anchors=['services','work','process','about','contact'];
+---
+<header class="site-header" id="top">
+  <div class="shell header-inner">
+    <a class="brand" href={`/${locale}/`} aria-label={t.aboutTitle}><Wordmark locale={locale}/><span class="brand-dot" aria-hidden="true">.</span></a>
+    <nav class="desktop-nav" aria-label={locale==='ar'?'التنقل الرئيسي':locale==='pt'?'Navegação principal':'Main navigation'}><a href={`/${locale}/`} aria-current={page==='home'?'page':undefined}>{w.navHome}</a><a href={`/${locale}/work-with-me/`} aria-current={page==='work'?'page':undefined}>{w.navWork}</a><a href={`/${locale}/insights/`} aria-current={page==='insights'?'page':undefined}>{insightsCopy[locale].nav}</a><a href={`/${locale}/about/`} aria-current={page==='about'?'page':undefined}>{about.about}</a><a href={`/${locale}/work/`} aria-current={page==='work-index'||page==='mandi-detail'||page==='geberit-detail'?'page':undefined}>{wi.navLabel}</a>{anchors.map((id,i)=><a href={anchorHref(id)}>{t.nav[i]}</a>)}</nav>
+    <div class="header-tools"><div class="desktop-langs"><LanguageLinks current={locale} equivalents={effectiveEquivalents}/></div><a class="header-cta" href={page==='work'?workWhatsApp(locale):page==='work-index'?workIndexWhatsApp(locale):page==='mandi-detail'?mandiWhatsApp(locale):page==='geberit-detail'?geberitWhatsApp(locale):page==='about'?aboutWhatsApp(locale):page==='cv'?cvWhatsApp(locale):page==='insights'?insightsWhatsApp(locale):whatsappHref(locale)} target="_blank" rel="noopener noreferrer" {...contactTrackingAttributes('whatsapp','other')}>{t.contactWhats} <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label={t.menu} data-menu-toggle data-open-label={t.menu} data-close-label={t.close}><span aria-hidden="true">☰</span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden><nav aria-label={locale==='ar'?'التنقل على الهاتف':'Mobile navigation'}><a href={`/${locale}/`} aria-current={page==='home'?'page':undefined}>{w.navHome}</a><a href={`/${locale}/work-with-me/`} aria-current={page==='work'?'page':undefined}>{w.navWork}</a><a href={`/${locale}/insights/`} aria-current={page==='insights'?'page':undefined}>{insightsCopy[locale].nav}</a><a href={`/${locale}/about/`} aria-current={page==='about'?'page':undefined}>{about.about}</a><a href={`/${locale}/work/`} aria-current={page==='work-index'||page==='mandi-detail'||page==='geberit-detail'?'page':undefined}>{wi.navLabel}</a>{anchors.map((id,i)=><a href={anchorHref(id)}>{t.nav[i]}</a>)}</nav><LanguageLinks current={locale} equivalents={effectiveEquivalents}/></div>
+</header>
+<script>
+ const toggle=document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+ const menu=document.querySelector<HTMLElement>('#mobile-menu');
+ if(toggle && menu){
+  const close=()=>{toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label',toggle.dataset.openLabel||'Menu');menu.hidden=true;toggle.querySelector('span')!.textContent='☰';};
+  toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?(toggle.dataset.closeLabel||'Close'):(toggle.dataset.openLabel||'Menu'));menu.hidden=!open;toggle.querySelector('span')!.textContent=open?'×':'☰';});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!menu.hidden){close();toggle.focus();}});
+  document.addEventListener('pointerdown',event=>{if(!menu.hidden && !menu.contains(event.target as Node) && !toggle.contains(event.target as Node))close();});
+  const mq=window.matchMedia('(min-width: 1000px)');mq.addEventListener('change',()=>{if(mq.matches)close();});
+ }
+</script>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProfessionalCV from '../../../components/ProfessionalCV.astro';
+import {locales,type Locale} from '../../../lib/i18n';
+import {cvCopy} from '../../../content/cv';
+export function getStaticPaths(){return locales.map(locale=>({params:{locale}}));}
+const locale=Astro.params.locale as Locale;
+const t=cvCopy[locale];
+const pathname=`/${locale}/cv/`;
+const origin='https://husamyasen.com';
+const alternates={ar:'/ar/cv/',en:'/en/cv/',pt:'/pt/cv/'};
+const graph={'@context':'https://schema.org','@graph':[
+ {'@type':'ProfilePage','@id':`${origin}${pathname}#webpage`,url:`${origin}${pathname}`,name:t.title,description:t.description,inLanguage:locale,mainEntity:{'@id':`${origin}/#person`},breadcrumb:{'@id':`${origin}${pathname}#breadcrumb`}},
+ {'@type':'BreadcrumbList','@id':`${origin}${pathname}#breadcrumb`,itemListElement:[{'@type':'ListItem',position:1,name:t.home,item:`${origin}/${locale}/`},{'@type':'ListItem',position:2,name:t.about,item:`${origin}/${locale}/about/`},{'@type':'ListItem',position:3,name:t.cv,item:`${origin}${pathname}`}]},
+ {'@type':'Person','@id':`${origin}/#person`,name:'Hussam Yassen',alternateName:'حسام ياسين',url:`${origin}/`,sameAs:['https://www.linkedin.com/in/hussam-yassen','https://www.instagram.com/growthlab.ae/']}
+]};
+---
+<BaseLayout locale={locale} pathname={pathname} title={t.title} description={t.description} alternates={alternates} indexable={true}><Fragment slot="structured-data"><script type="application/ld+json" set:html={JSON.stringify(graph)} /></Fragment><ProfessionalCV locale={locale}/></BaseLayout>

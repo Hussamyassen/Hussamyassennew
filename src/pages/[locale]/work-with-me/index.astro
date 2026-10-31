@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import WorkWithMe from '../../../components/WorkWithMe.astro';
+import { locales,type Locale } from '../../../lib/i18n';
+import { getWork } from '../../../content/work';
+export function getStaticPaths(){return locales.map(locale=>({params:{locale}}));}
+const locale=Astro.params.locale as Locale;
+const t=getWork(locale);
+const pathname=`/${locale}/work-with-me/`;
+const alternates={ar:'/ar/work-with-me/',en:'/en/work-with-me/',pt:'/pt/work-with-me/'};
+const graph={ '@context':'https://schema.org', '@graph':[
+ {'@type':'WebPage','@id':`https://husamyasen.com${pathname}#webpage`,'url':`https://husamyasen.com${pathname}`,'name':t.title,'description':t.description,'inLanguage':locale,'about':{'@id':'https://husamyasen.com/#person'},'breadcrumb':{'@id':`https://husamyasen.com${pathname}#breadcrumb`}},
+ {'@type':'BreadcrumbList','@id':`https://husamyasen.com${pathname}#breadcrumb`,'itemListElement':[{'@type':'ListItem','position':1,'name':t.navHome,'item':`https://husamyasen.com/${locale}/`},{'@type':'ListItem','position':2,'name':t.navWork,'item':`https://husamyasen.com${pathname}`}]},
+ {'@type':'Person','@id':'https://husamyasen.com/#person','name':'Hussam Yassen','alternateName':'حسام ياسين','url':'https://husamyasen.com/','sameAs':['https://www.linkedin.com/in/hussam-yassen','https://www.instagram.com/growthlab.ae/']},
+ {'@type':'Service','name':locale==='ar'?'إدارة حملات Google Ads وMeta Ads':locale==='pt'?'Gestão de campanhas Google Ads e Meta Ads':'Google Ads and Meta Ads Campaign Management','description':t.lead,'provider':{'@id':'https://husamyasen.com/#person'},'serviceType':'Paid advertising campaign management','url':`https://husamyasen.com${pathname}`}
+ ]};
+---
+<BaseLayout locale={locale} pathname={pathname} title={t.title} description={t.description} alternates={alternates} indexable={true}><Fragment slot="structured-data"><script type="application/ld+json" set:html={JSON.stringify(graph)} /></Fragment><WorkWithMe locale={locale}/></BaseLayout>

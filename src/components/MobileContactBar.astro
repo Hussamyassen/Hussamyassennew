@@ -1,0 +1,10 @@
+---
+import {insightsCopy, insightsWhatsApp} from '../content/insights';
+import {aboutCopy,aboutWhatsApp} from '../content/about';
+import {cvCopy,cvWhatsApp} from '../content/cv';
+import {geberitWhatsApp,geberitDetail} from '../content/geberitDetail';
+
+import { whatsappHref } from '../lib/i18n';import {telHref} from '../config/site';import {contactTrackingAttributes} from '../lib/tracking';import {getHome} from '../content/home';import type {Locale} from '../lib/i18n';import {getWork} from '../content/work';import {workWhatsApp} from '../lib/work';import {workIndexWhatsApp,workIndexCopy} from '../content/workIndex';import {mandiWhatsApp,mandiDetail} from '../content/mandiDetail';
+const {locale,page='home'}=Astro.props as {locale:Locale;page?:'home'|'work'|'work-index'|'mandi-detail'|'geberit-detail'|'about'|'cv'|'insights'};const t=getHome(locale);const w=getWork(locale);
+---
+<div class="mobile-contact-bar"><a class="mobile-whatsapp" href={page==='work'?workWhatsApp(locale):page==='work-index'?workIndexWhatsApp(locale):page==='mandi-detail'?mandiWhatsApp(locale):page==='geberit-detail'?geberitWhatsApp(locale):page==='about'?aboutWhatsApp(locale):page==='cv'?cvWhatsApp(locale):page==='insights'?insightsWhatsApp(locale):whatsappHref(locale)} target="_blank" rel="noopener noreferrer" {...contactTrackingAttributes('whatsapp','sticky')}>{page==='work'?w.contactWhats:page==='work-index'?workIndexCopy[locale].contactWhats:page==='mandi-detail'?mandiDetail[locale].contactCta:page==='geberit-detail'?geberitDetail[locale].contactCta:page==='about'?aboutCopy[locale].contactCta:page==='cv'?cvCopy[locale].contact:page==='insights'?insightsCopy[locale].contactCta:t.contactWhats} <span aria-hidden="true">↗</span></a><a class="mobile-call" href={telHref} {...contactTrackingAttributes('phone','sticky')}>{t.contactCall}</a></div>

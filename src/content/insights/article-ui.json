@@ -1,0 +1,107 @@
+{
+  "ar": {
+    "slug": "rasail-whatsapp-bila-mabieat",
+    "title": "إعلاناتك تجلب رسائل واتساب، لكن المبيعات ضعيفة: ماذا تراجع؟",
+    "description": "كيف تفحص الفرق بين النقرات ومحادثات واتساب والاستفسارات المؤهلة والمبيعات، وتعرف أين تتعطل رحلة العميل قبل تغيير حملتك.",
+    "headings": [
+      "ابدأ بتحديد ما تقيسه",
+      "راجع الوعد في الإعلان",
+      "افحص المحادثة نفسها",
+      "ابحث عن عوائق الشراء",
+      "تتبع الاستفسارات المؤهلة والمبيعات",
+      "مثال حسابي توضيحي",
+      "جدول تشخيص سريع",
+      "ما الذي تغيّره أولاً؟"
+    ],
+    "lead": "كثرة استفسارات واتساب مع قلة المبيعات لا تعني تلقائياً أن الإعلان فاشل أو أن فريق المبيعات مقصّر. ربما يجذب العرض جمهوراً غير مناسب، أو يترك الإعلان أسئلة جوهرية، أو تتعثر المحادثة عند السعر أو التوصيل أو الحجز. ابدأ بتحديد المرحلة التي تتوقف عندها رحلة العميل، ولا تحكم على النجاح بعدد الرسائل وحده.",
+    "toc": "في هذا المقال",
+    "example": "مثال افتراضي",
+    "tableheaders": [
+      "ما تلاحظه",
+      "تفسير محتمل",
+      "ماذا تراجع؟"
+    ],
+    "refs": "مراجع موثوقة",
+    "author": "حسام ياسين",
+    "read": "دقائق قراءة",
+    "back": "العودة للمقالات",
+    "services": "العمل معي",
+    "ctaHead": "عندك استفسارات كثيرة ومبيعات قليلة؟",
+    "ctaBody": "أرسل لي نبذة عن نشاطك وما يظهر في التقارير ومسار التواصل، لنناقش نقطة البداية المناسبة.",
+    "cta": "ناقش حملتك معي",
+    "message": "مرحباً حسام، قرأت مقالك عن استفسارات واتساب والمبيعات وأرغب في مناقشة حملتي.",
+    "home": "الرئيسية",
+    "insights": "المقالات والمعرفة",
+    "noDate": "محتوى تحريري معد للنشر"
+  },
+  "en": {
+    "slug": "whatsapp-enquiries-few-sales",
+    "title": "WhatsApp Enquiries but Few Sales: What to Check in Your Ad Campaign",
+    "description": "A practical guide to distinguishing ad clicks, WhatsApp chats, qualified enquiries and sales — and spotting the friction between them.",
+    "headings": [
+      "Know what you are counting",
+      "Check the promise in the advert",
+      "Review the conversation",
+      "Find the purchasing friction",
+      "Measure qualified enquiries and sales",
+      "An illustrative calculation",
+      "A practical diagnostic table",
+      "What should you change first?"
+    ],
+    "lead": "Plenty of WhatsApp enquiries and few sales do not automatically mean that your adverts have failed or that your sales team is to blame. Your offer may be unclear, the audience may not match it, conversations may leave important questions unanswered, or buying may be unnecessarily difficult. Find out where the journey breaks down before judging the campaign by message volume.",
+    "toc": "On this page",
+    "example": "Illustrative example",
+    "tableheaders": [
+      "What you observe",
+      "Possible explanation",
+      "What to check next"
+    ],
+    "refs": "References",
+    "author": "Hussam Yassen",
+    "read": "min read",
+    "back": "Back to Insights",
+    "services": "Work With Me",
+    "ctaHead": "Getting enquiries but not enough sales?",
+    "ctaBody": "Tell me about the business, the campaign figures and how enquiries are handled. We can discuss where to start.",
+    "cta": "Discuss your campaign",
+    "message": "Hi Hussam, I read your article about WhatsApp enquiries and sales. I would like to discuss my campaign.",
+    "home": "Home",
+    "insights": "Insights",
+    "noDate": "Editorial content prepared for publication"
+  },
+  "pt": {
+    "slug": "contactos-whatsapp-poucas-vendas",
+    "title": "Recebe contactos pelo WhatsApp, mas poucas vendas? O que analisar na campanha",
+    "description": "Como distinguir cliques, conversas, contactos qualificados e vendas e encontrar os obstáculos no percurso do cliente.",
+    "headings": [
+      "Comece por definir o que está a contar",
+      "Verifique a promessa do anúncio",
+      "Analise a conversa",
+      "Identifique obstáculos à compra",
+      "Meça contactos qualificados e vendas",
+      "Exemplo numérico ilustrativo",
+      "Tabela prática de diagnóstico",
+      "O que mudar primeiro?"
+    ],
+    "lead": "Receber muitos contactos por WhatsApp e fechar poucas vendas não significa automaticamente que o anúncio falhou ou que a equipa comercial é responsável. A oferta pode não ser clara, o público pode não corresponder ao produto ou a conversa pode parar antes da decisão. O primeiro passo é perceber onde o percurso do cliente fica bloqueado, sem confundir volume de mensagens com resultado comercial.",
+    "toc": "Neste artigo",
+    "example": "Exemplo ilustrativo",
+    "tableheaders": [
+      "O que observa",
+      "Possível explicação",
+      "O que verificar"
+    ],
+    "refs": "Fontes",
+    "author": "Hussam Yassen",
+    "read": "min de leitura",
+    "back": "Voltar aos artigos",
+    "services": "Trabalhar comigo",
+    "ctaHead": "Recebe contactos mas poucas vendas?",
+    "ctaBody": "Descreva o negócio, os dados da campanha e a forma como responde aos contactos. Podemos conversar sobre o ponto de partida.",
+    "cta": "Conversar sobre a campanha",
+    "message": "Olá Hussam, li o seu artigo sobre contactos por WhatsApp e vendas. Gostaria de conversar sobre a minha campanha.",
+    "home": "Início",
+    "insights": "Artigos e insights",
+    "noDate": "Conteúdo editorial preparado para publicação"
+  }
+}

@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';import Homepage from '../../components/Homepage.astro';import {locales,type Locale} from '../../lib/i18n';import {getHome} from '../../content/home';
+export function getStaticPaths(){return locales.map(locale=>({params:{locale}}));}
+const locale=Astro.params.locale as Locale;const t=getHome(locale);const alternates={ar:'/ar/',en:'/en/',pt:'/pt/'};
+const structured=[{'@context':'https://schema.org','@type':'Person','name':locale==='ar'?'حسام ياسين':'Hussam Yassen','alternateName':locale==='ar'?'Hussam Yassen':'حسام ياسين','url':'https://husamyasen.com','sameAs':['https://www.linkedin.com/in/hussam-yassen','https://www.instagram.com/growthlab.ae/'],'jobTitle':locale==='ar'?'متخصص Google Ads وMeta Ads':locale==='pt'?'Especialista em Google Ads e Meta Ads':'Google Ads and Meta Ads Specialist','knowsAbout':['Google Ads','Meta Ads','Marketing Strategy','Campaign Measurement']},{'@context':'https://schema.org','@type':'WebSite','name':'Hussam Yassen','url':'https://husamyasen.com','inLanguage':['ar','en','pt']}];
+---
+<BaseLayout locale={locale} pathname={`/${locale}/`} title={t.title} description={t.description} alternates={alternates} indexable={true}><Fragment slot="structured-data">{structured.map(item=><script type="application/ld+json" set:html={JSON.stringify(item)} />)}</Fragment><Homepage locale={locale}/></BaseLayout>

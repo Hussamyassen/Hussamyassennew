@@ -1,0 +1,22 @@
+---
+import type {Locale} from '../lib/i18n';
+import type {InsightArticle} from '../content/insights/types';
+import {readingMinutes} from '../content/insights/types';
+import ui from '../content/insights/article-ui.json';
+import {sectionize} from '../lib/article-render';
+import Header from './Header.astro';import Footer from './Footer.astro';import MobileContactBar from './MobileContactBar.astro';
+import {contactTrackingAttributes} from '../lib/tracking';
+const {locale,article}=Astro.props as {locale:Locale;article:InsightArticle};
+const t=ui[locale];const sections=sectionize(article.body);
+const url=`https://wa.me/971526119071?text=${encodeURIComponent(t.message)}`;
+---
+<Header locale={locale} page="insights" />
+<main id="main" class="article-page">
+ <article class="shell article-container">
+  <nav aria-label={locale==='ar'?'مسار التنقل':locale==='pt'?'Navegação estrutural':'Breadcrumb'} class="article-breadcrumb"><a href={`/${locale}/`}>{t.home}</a><span aria-hidden="true">/</span><a href={`/${locale}/insights/`}>{t.insights}</a><span aria-hidden="true">/</span><span aria-current="page">{article.title}</span></nav>
+  <header class="article-heading"><p class="eyebrow">{locale==='ar'?'ما بعد النقرة':locale==='pt'?'Depois do Clique':'After the Click'}</p><h1>{article.title}</h1><p class="article-lead">{article.description}</p><div class="article-meta"><a href={`/${locale}/about/`}>{t.author}</a><span aria-hidden="true">·</span><span>{readingMinutes(article.body)} {t.read}</span></div></header>
+  <div class="article-content-grid"><aside class="article-aside"><nav aria-label={t.toc}><strong>{t.toc}</strong><ol>{sections.map(section=><li><a href={`#${section.id}`}>{section.heading}</a></li>)}</ol></nav></aside><div class="article-prose"><p class="article-opening">{t.lead}</p>{sections.map(section=><section id={section.id} aria-labelledby={`${section.id}-heading`}><h2 id={`${section.id}-heading`}>{section.heading}</h2><Fragment set:html={section.html}/></section>)}<section class="article-references"><h2>{t.refs}</h2><ul>{article.references?.map(ref=><li><a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.title}</a></li>)}</ul></section></div></div>
+ </article>
+ <section class="contact-section article-contact"><div class="shell contact-layout"><div><h2>{t.ctaHead}</h2><p>{t.ctaBody}</p></div><div class="contact-actions"><a class="button button-lime" href={url} data-inquiry-type="article-whatsapp-sales" target="_blank" rel="noopener noreferrer" {...contactTrackingAttributes('whatsapp','section')}>{t.cta} ↗</a><a href={`/${locale}/work-with-me/`}>{t.services}</a><a href={`/${locale}/insights/`}>{t.back}</a></div></div></section>
+</main>
+<Footer locale={locale} page="insights" /><MobileContactBar locale={locale} page="insights" />

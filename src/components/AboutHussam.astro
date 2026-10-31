@@ -1,0 +1,30 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import MobileContactBar from './MobileContactBar.astro';
+import {aboutCopy,aboutWhatsApp} from '../content/about';
+import {cvCopy} from '../content/cv';
+import {contactTrackingAttributes} from '../lib/tracking';
+import type {Locale} from '../lib/i18n';
+const {locale}=Astro.props as {locale:Locale};
+const t=aboutCopy[locale];
+const jobs=[['Liberty International Media','Junior Media Buyer'],['Sama Alrabee Cleaning Services EST','Senior Digital Marketing Specialist'],['Al Satari Trading Company','Senior Digital Marketing Specialist'],['Al Satari Group','Digital Marketing Manager']];
+const sectionLabels = {ar:['المسار المهني','مبادرات مختارة','طريقة العمل','التعلّم','الأعمال','الأفكار'],en:['Career','Selected initiatives','Approach','Learning','Work','Ideas'],pt:['Trajetória profissional','Iniciativas selecionadas','Abordagem','Formação','Projetos','Ideias']}[locale];
+const credentials=['Google Ads Certification — Google Skillshop','Google Analytics 4 Certification — Google Skillshop','Google AI Essentials','LinkedIn AI Learning Certificate','HubSpot Digital Marketing'];
+---
+<Header locale={locale} page="about" />
+<main id="main" class="about-page">
+ <nav class="about-breadcrumb shell" aria-label="Breadcrumb"><a href={`/${locale}/`}>{t.home}</a><span aria-hidden="true">/</span><span aria-current="page">{t.about}</span></nav>
+ <section class="about-hero shell" aria-labelledby="about-title"><div class="about-hero-content"><p class="eyebrow">{t.eye} · Google Ads & Meta Ads</p><h1 id="about-title">{t.h1}</h1><p class="about-lead">{t.intro}</p><div class="about-actions"><a class="button button-lime" href={aboutWhatsApp(locale)} target="_blank" rel="noopener noreferrer" data-inquiry-type="business" {...contactTrackingAttributes('whatsapp','hero')}>{t.cta} <span aria-hidden="true">↗</span></a><a class="text-link" href={`/${locale}/work/`}>{t.works} ↗</a></div></div><figure class="about-hero-photo"><img src="/images/hussam-office-doorway.webp" width="900" height="1350" loading="eager" decoding="async" alt={locale==='ar'?'حسام ياسين في مدخل مكتب':locale==='pt'?'Retrato de Hussam Yassen à entrada de um escritório':'Portrait of Hussam Yassen in an office doorway'}/></figure></section>
+ <section class="about-story shell" aria-labelledby="about-story"><div class="about-section-label">01 — {t.about}</div><div><h2 id="about-story">{t.storyTitle}</h2>{t.story.map(p=><p>{p}</p>)}</div></section>
+ <section class="about-career" aria-labelledby="about-career-title"><div class="shell"><div class="about-section-label">02 — {sectionLabels[0]}</div><h2 id="about-career-title">{t.career}</h2><ol class="about-career-list">{jobs.map(([company,role],i)=><li><span class="about-index" aria-hidden="true">0{i+1}</span><div><h3>{company}</h3><p class="about-role" dir="ltr">{role}</p><p>{t.jobs[i]}</p></div></li>)}</ol></div></section>
+ <section class="about-initiatives shell" aria-labelledby="about-initiatives-title"><div class="about-section-label">03 — {sectionLabels[1]}</div><h2 id="about-initiatives-title">{t.initiatives}</h2><div class="about-initiatives-list">{t.initiativeTitles.map((title,i)=><article><span aria-hidden="true" class="about-index">0{i+1}</span><div><h3>{title}</h3><p>{t.initiativeBodies[i]}</p></div></article>)}</div></section>
+ <section class="about-approach" aria-labelledby="about-approach-title"><div class="shell"><div class="about-section-label">04 — {sectionLabels[2]}</div><h2 id="about-approach-title">{t.approach}</h2><ol>{t.principleTitles.map((title,i)=><li><span aria-hidden="true">0{i+1}</span><h3>{title}</h3><p>{t.principles[i]}</p></li>)}</ol></div></section>
+ <section class="about-education shell" aria-labelledby="about-education-title"><div class="about-section-label">05 — {sectionLabels[3]}</div><div><h2 id="about-education-title">{t.education}</h2><p class="about-degree">{t.degree}</p><p>{t.university}</p><h3>{t.certs}</h3><ul>{credentials.map(item=><li>{item}</li>)}</ul></div></section>
+ <section class="about-related shell" aria-labelledby="about-related-title"><div class="about-section-label">06 — {sectionLabels[4]}</div><div><h2 id="about-related-title">{t.workTitle}</h2><ul><li><a href={`/${locale}/work/mandi-al-deera/`}>{t.mandi} ↗</a></li><li><a href={`/${locale}/work/geberit-campaign/`}>{t.geberit} ↗</a></li><li><a href={`/${locale}/work/`}>{t.allWork} ↗</a></li></ul></div></section>
+ <div class="shell" style="padding-block:1.5rem"><a class="text-link" href={`/${locale}/cv/`}>{cvCopy[locale].cv} ↗</a></div>
+ <section class="about-knowledge shell"><div class="about-section-label">07 — {sectionLabels[5]}</div><div><h2>{t.knowledge}</h2>{t.knowledgeText.map(p=><p>{p}</p>)}<a href="https://www.linkedin.com/in/hussam-yassen" target="_blank" rel="noopener noreferrer" class="text-link">{t.linkedin} ↗</a></div></section>
+ <section class="about-contact"><div class="shell"><h2>{t.contactTitle}</h2><div class="about-actions"><a class="button button-lime" href={aboutWhatsApp(locale)} target="_blank" rel="noopener noreferrer" data-inquiry-type="business" {...contactTrackingAttributes('whatsapp','section')}>{t.contactCta} ↗</a><a class="text-link" href={`/${locale}/work-with-me/`}>{t.services} ↗</a></div><a class="about-career-link" href={aboutWhatsApp(locale,'career')} target="_blank" rel="noopener noreferrer" data-inquiry-type="career" {...contactTrackingAttributes('whatsapp','other')}>{t.careerCta} ↗</a></div></section>
+</main>
+<Footer locale={locale} page="about" />
+<MobileContactBar locale={locale} page="about" />
