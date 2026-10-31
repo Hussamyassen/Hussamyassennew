@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import InsightArticle from '../../../components/InsightArticle.astro';
-import {articles,translatedArticle,type InsightArticle} from '../../../content/insights/types';
+import {articles,translatedArticle,type InsightArticle as InsightArticleRecord} from '../../../content/insights/types';
 import type {Locale} from '../../../lib/i18n';
 export function getStaticPaths(){return articles.filter(a=>a.status==='published'&&a.body.trim()).map(a=>({params:{locale:a.locale,slug:a.slug},props:{article:a}}));}
-const {article}=Astro.props as {article:InsightArticle};const locale=article.locale as Locale;
+const {article}=Astro.props as {article:InsightArticleRecord};const locale=article.locale as Locale;
 const pathname=`/${locale}/insights/${article.slug}/`;
 const origin='https://husamyasen.com';
-const alternates=Object.fromEntries((['ar','en','pt'] as Locale[]).map(l=>[l,translatedArticle(article,l)]).filter(([,a])=>Boolean(a)).map(([l,a])=>[l,`/${l}/insights/${(a as InsightArticle).slug}/`]));
+const alternates=Object.fromEntries((['ar','en','pt'] as Locale[]).map(l=>[l,translatedArticle(article,l)]).filter(([,a])=>Boolean(a)).map(([l,a])=>[l,`/${l}/insights/${(a as InsightArticleRecord).slug}/`]));
 const graph={'@context':'https://schema.org','@graph':[
  {'@type':'BlogPosting','@id':`${origin}${pathname}#article`,headline:article.title,description:article.description,inLanguage:locale,mainEntityOfPage:{'@id':`${origin}${pathname}#webpage`},author:{'@id':`${origin}/#person`}},
  {'@type':'WebPage','@id':`${origin}${pathname}#webpage`,url:`${origin}${pathname}`,name:article.title,inLanguage:locale,breadcrumb:{'@id':`${origin}${pathname}#breadcrumb`}},
